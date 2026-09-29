@@ -1,0 +1,32 @@
+export type {
+  Address,
+  Attachment,
+  BillCategory,
+  BillPayer,
+  BillStatus,
+  CollectionName,
+  Database,
+  EntityMap,
+  Lease,
+  LeaseStatus,
+  MeterContext,
+  MeterReading,
+  MeterType,
+  Payment,
+  PaymentFrequency,
+  PaymentMethod,
+  Property,
+  PropertyStatus,
+  PropertyType,
+  RentDue,
+  RentDueStatus,
+  RentRevision,
+  SessionUser,
+  Tenant,
+  User,
+  UserData,
+  UtilityBill,
+} from "@/lib/schemas"
+
+/** Champs gérés par la couche de données (jamais saisis par l'utilisateur). */
+export type SystemFields = "id" | "userId" | "createdAt" | "updatedAt"
