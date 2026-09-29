@@ -1,0 +1,215 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-bricolage), var(--font-public-sans), ui-sans-serif, sans-serif;
+  --color-brass: var(--brass);
+  --color-brass-soft: var(--brass-soft);
+  --color-status-paid: var(--status-paid);
+  --color-status-paid-bg: var(--status-paid-bg);
+  --color-status-partial: var(--status-partial);
+  --color-status-partial-bg: var(--status-partial-bg);
+  --color-status-unpaid: var(--status-unpaid);
+  --color-status-unpaid-bg: var(--status-unpaid-bg);
+  --color-status-late: var(--status-late);
+  --color-status-late-bg: var(--status-late-bg);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  /* Palette « vert-de-gris » : patine des toits parisiens, laiton en accent. */
+  --background: #f5f7f5;
+  --foreground: #16201c;
+  --card: #ffffff;
+  --card-foreground: #16201c;
+  --popover: #ffffff;
+  --popover-foreground: #16201c;
+  --primary: #2f5d50;
+  --primary-foreground: #f4faf7;
+  --secondary: #e9eeeb;
+  --secondary-foreground: #1e2b26;
+  --muted: #edf1ee;
+  --muted-foreground: #56645e;
+  --accent: #e4ece8;
+  --accent-foreground: #1e2b26;
+  --destructive: #b8322b;
+  --border: #d9e0dc;
+  --input: #cdd6d1;
+  --ring: #3f7a69;
+  --brass: #a07a2c;
+  --brass-soft: #f4ecd9;
+
+  --status-paid: #1d7348;
+  --status-paid-bg: #e2f3e9;
+  --status-partial: #9a5b00;
+  --status-partial-bg: #fcefd6;
+  --status-unpaid: #4d5866;
+  --status-unpaid-bg: #eaedf1;
+  --status-late: #b3261e;
+  --status-late-bg: #fbe4e2;
+
+  /* Graphiques : palette catégorielle validée (daltonisme), ordre fixe. */
+  --chart-1: #2a78d6;
+  --chart-2: #eb6834;
+  --chart-3: #1baf7a;
+  --chart-4: #eda100;
+  --chart-5: #e87ba4;
+  --radius: 0.7rem;
+  --sidebar: #eef2ef;
+  --sidebar-foreground: #1e2b26;
+  --sidebar-primary: #2f5d50;
+  --sidebar-primary-foreground: #f4faf7;
+  --sidebar-accent: #dfe7e3;
+  --sidebar-accent-foreground: #16201c;
+  --sidebar-border: #d9e0dc;
+  --sidebar-ring: #3f7a69;
+}
+
+.dark {
+  --background: #0f1513;
+  --foreground: #e6ece9;
+  --card: #161e1b;
+  --card-foreground: #e6ece9;
+  --popover: #1a2320;
+  --popover-foreground: #e6ece9;
+  --primary: #86c2ac;
+  --primary-foreground: #0c1814;
+  --secondary: #222c28;
+  --secondary-foreground: #e6ece9;
+  --muted: #1f2825;
+  --muted-foreground: #9aa9a2;
+  --accent: #24302b;
+  --accent-foreground: #e6ece9;
+  --destructive: #f07a70;
+  --border: rgb(255 255 255 / 9%);
+  --input: rgb(255 255 255 / 14%);
+  --ring: #6fa895;
+  --brass: #d4ad5c;
+  --brass-soft: #2e2716;
+
+  --status-paid: #6fd39c;
+  --status-paid-bg: rgb(111 211 156 / 13%);
+  --status-partial: #f1b458;
+  --status-partial-bg: rgb(241 180 88 / 13%);
+  --status-unpaid: #aab4c0;
+  --status-unpaid-bg: rgb(170 180 192 / 13%);
+  --status-late: #ff8a80;
+  --status-late-bg: rgb(255 138 128 / 14%);
+
+  --chart-1: #3987e5;
+  --chart-2: #d95926;
+  --chart-3: #199e70;
+  --chart-4: #c98500;
+  --chart-5: #d55181;
+  --sidebar: #131a18;
+  --sidebar-foreground: #e6ece9;
+  --sidebar-primary: #86c2ac;
+  --sidebar-primary-foreground: #0c1814;
+  --sidebar-accent: #212b27;
+  --sidebar-accent-foreground: #e6ece9;
+  --sidebar-border: rgb(255 255 255 / 8%);
+  --sidebar-ring: #6fa895;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+@layer base {
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.015em;
+  }
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 16mm;
+  }
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-sheet {
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: none !important;
+  }
+}

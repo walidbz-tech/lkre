@@ -1,0 +1,6 @@
+node_modules
+.next
+out
+data/db.json
+package-lock.json
+components/ui
